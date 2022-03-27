@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+  <head lang="zh-Hant-TW">
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>讓我幫你 Google 一下 | Let Me Google That For You</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="opensearch.xml" rel="search" type="application/opensearchdescription+xml" title="lmgtfy">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/base64.min.js"></script>
+    <script src="js/clipboard.min.js"></script>
+    <script src="js/lmgtfy.js"></script>
+  </head>
+  <body>
+    <section id="main">
+    <div class="about" title="關於" onclick="showAbout()">?</div>
+    <div id="msgbox" class="pop-box">
+        <span class="caption">這是啥</span>
+        <div class="thanks">
+            *本網站與 Google 公司沒有任何關係，Google 及本網站出現的 Google Logo 是 Google 公司的商標。
+        </div>
+        <div class="thanks">
+            由 <a href="https://www.lightero.tech" target="_blank">亮寰科技團隊</a> 開發主體程式, 並提供技術支援.
+        </div>
+        <div class="readit" onclick="hideAbout();">我知道了</div>
+    </div>
+    <div id="mask" class="mask"></div>
+    <div class="container">
+        <div class="title0">
+            <h1 class="title">你484需要我幫你<img src="img/google_logo.png" class="logo">一下呀～</h1>
+            <div class="search-box">
+                <input type="text" class="search-text" id="kw">
+            </div>
+            <div class="search-button">
+                <button class="btn" id="search">
+                    <span class="sicon"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span>
+                    <span class="stext">Google 搜尋</span>
+                </button>
+                <button class="btn" id="search2">&nbsp;好手氣&nbsp;</button>
+            </div>
+        </div>
+    </div>
+    </section>
+    <section id="function">
+        <p id="tips">輸入關鍵字後，按下「Google 搜尋」，就會生成一個神奇的連結唷！到時候就可以把連結給那些不想自己查的人了！</p>
+        
+        <button id="stop">對不起，我會用QQ</button>
+        
+        <div id="output">
+            <textarea id="url-output" rows="3" readonly></textarea>
+            <div class="tool-btns">
+                <button data-clipboard-target="#url-output">複製</button>
+                <button id="preview">預覽</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <span>&copy; <script>document.write(new Date().getFullYear())</script> <a href="https://www.lightero.tech" target="_blank">亮寰軟體科技有限公司</a>. 版權所有,複製必究.</span>
+    </footer>
+    <div id="arrow"></div>
+  </body>
+</html>
